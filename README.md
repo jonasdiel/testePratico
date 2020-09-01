@@ -17,4 +17,10 @@ Teste Prático de PHP para novos Colaboradores
     `cd testePratico/`
 - Executar containers:
     `./run`
-         
+- Instalar dependências
+    `docker exec -it testepratico_workspace_1 composer install`
+- Copiar arquivo de configuração    
+    `docker exec -it testepratico_workspace_1 cp .env.example .env`
+- Gerar chave de segurança
+    `docker exec -it testepratico_workspace_1 php artisan key:generate`
+- Acessando aplicação: http://localhost/    
