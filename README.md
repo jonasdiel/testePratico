@@ -40,4 +40,8 @@ Teste Prático de PHP para novos Colaboradores
 - Alterar arquivo .env e alterar APP_URL para o client API resolver internamente
     `APP_URL=http://192.168.160.6`
     
+- Para executar os testes da API
+
+    `docker exec -it testepratico_workspace_1 php artisan test`
+    
 - Acessando aplicação: http://localhost/    

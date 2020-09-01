@@ -3,19 +3,19 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class TesteApi extends TestCase
 {
     /**
-     * A basic test example.
+     * A basic feature test example.
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testeApiMedico()
     {
-        $response = $this->get('/');
-
+        $response = $this->get('api/medico');
         $response->assertStatus(200);
     }
 }
