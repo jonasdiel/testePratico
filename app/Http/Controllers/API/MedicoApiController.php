@@ -39,6 +39,7 @@ class MedicoApiController extends Controller
         $medico->telefone = $request->telefone;
         $medico->crm = $request->crm;
         $return = $medico->save();
+        $medico->especialidades()->sync(array_filter((array)$request->especialidades));
         return response()->json($return);
     }
 
@@ -67,6 +68,7 @@ class MedicoApiController extends Controller
         $medico->telefone = $request->telefone;
         $medico->crm = $request->crm;
         $return = $medico->save();
+        $medico->especialidades()->sync(array_filter((array)$request->especialidades));
         return response()->json($return);
     }
 
