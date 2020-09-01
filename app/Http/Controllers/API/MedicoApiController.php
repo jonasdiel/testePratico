@@ -14,9 +14,15 @@ class MedicoApiController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
+    public function index(Request $request)
     {
-        $medicos = Medico::all();
+        $busca = $request->get('busca');
+        if( strlen($busca) > 0 ) {
+            $medicos = Medico::where('nome', 'LIKE', '%'.$busca.'%')->orWhere('telefone', 'LIKE', '%'.$busca.'%')->get();
+        }
+        else {
+            $medicos = Medico::all();
+        }
         return response()->json($medicos);
     }
 
@@ -31,6 +37,7 @@ class MedicoApiController extends Controller
         $medico = new Medico();
         $medico->nome = $request->nome;
         $medico->telefone = $request->telefone;
+        $medico->crm = $request->crm;
         $return = $medico->save();
         return response()->json($return);
     }
@@ -58,6 +65,7 @@ class MedicoApiController extends Controller
         $medico = Medico::find($id);
         $medico->nome = $request->nome;
         $medico->telefone = $request->telefone;
+        $medico->crm = $request->crm;
         $return = $medico->save();
         return response()->json($return);
     }
