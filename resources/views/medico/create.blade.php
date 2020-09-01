@@ -7,13 +7,13 @@
         <div class="form-group">
             <a href="{{url('medico')}}">Buscar médicos</a><br>
             <label for="nomeAlt">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nome">
+            <input type="text" class="form-control" id="nome" name="nome" required>
             <label for="telefoneAlt">Telefone</label>
-            <input type="text" class="form-control" id="telefone" name="telefone">
+            <input type="text" class="form-control" id="telefone" name="telefone" required>
             <label for="crmAlt">CRM</label>
-            <input type="text" class="form-control" id="crm" name="crm">
+            <input type="text" class="form-control" id="crm" name="crm" required>
             <label for="especialidades">Especialidades</label>
-            <select class="form-control" id="especialidades[]" name="especialidades[]" multiple>
+            <select class="form-control" id="especialidades[]" name="especialidades[]" multiple required>
                 @foreach(\App\Especialidade::all() as $cod=>$especialidade)
                     <option value="{{$especialidade->id}}">{{$especialidade->nome}}</option>
                 @endforeach
