@@ -51,7 +51,13 @@ class MedicoApiController extends Controller
      */
     public function show($id)
     {
-        return response()->json(Medico::find($id));
+        $medico = Medico::find($id);
+        $esp = array();
+        foreach($medico->especialidades()->get() as $cod=> $especialidade) {
+
+            $esp[$especialidade->id] = $especialidade->id;
+        }
+        return response()->json(compact('medico', 'esp'));
     }
 
     /**

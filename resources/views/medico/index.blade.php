@@ -4,16 +4,6 @@
 
     <form>
         <div class="form-group">
-            @if (\Session::has('success'))
-
-                {!! \Session::get('success') !!}
-
-                <div class="alert alert-success">
-                    <ul>
-                        <li>{!! \Session::get('success') !!}</li>
-                    </ul>
-                </div>
-            @endif
             <a href="{{url('medico/create')}}">Novo Médico</a><br>
             <label for="exampleInputEmail1">Buscar médico</label>
             <input type="text" class="form-control" id="busca" aria-describedby="buscaHelp">
@@ -36,7 +26,6 @@
             <tr>
                 <th scope="row">
                     <a href="{{url('medico/'.$medico['id'].'/edit')}}">Editar</a>
-                    <a href="{{url('medico/'.$medico['id'].'/edit')}}">Excluir</a>
                 </th>
                 <td>{!! $medico['nome'] !!}</td>
                 <td>{!! $medico['telefone'] !!}</td>
