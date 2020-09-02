@@ -18,7 +18,7 @@ class MedicoApiController extends Controller
     {
         $busca = $request->get('busca');
         if( strlen($busca) > 0 ) {
-            $medicos = Medico::where('nome', 'LIKE', '%'.$busca.'%')->orWhere('telefone', 'LIKE', '%'.$busca.'%')->get();
+            $medicos = Medico::where('nome', 'LIKE', '%'.$busca.'%')->orWhere('crm', 'LIKE', '%'.$busca.'%')->get();
         }
         else {
             $medicos = Medico::all();

@@ -18,19 +18,33 @@
         <tr>
             <th scope="col">Ações</th>
             <th scope="col">Nome</th>
-            <th scope="col">Telefone</th>
+            <th scope="col">CRM</th>
         </tr>
         </thead>
         <tbody>
+        @if( isset($dados) )
         @foreach($dados as $cod=>$medico)
             <tr>
                 <th scope="row">
                     <a href="{{url('medico/'.$medico['id'].'/edit')}}">Editar</a>
                 </th>
                 <td>{!! $medico['nome'] !!}</td>
-                <td>{!! $medico['telefone'] !!}</td>
+                <td>{!! $medico['crm'] !!}</td>
             </tr>
         @endforeach
+        @endif
         </tbody>
     </table>
+@endsection
+
+@section('scripts')
+    <script>
+        //Desabilita Enter
+        $('form').bind("keypress", function(e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    </script>
 @endsection

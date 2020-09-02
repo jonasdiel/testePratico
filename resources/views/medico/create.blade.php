@@ -3,7 +3,7 @@
 @section('body')
     <form action="{{url('medico')}}" method="POST">
         @csrf
-        <input type="hidden" name="_method" value="post" />
+        <input type="hidden" name="_method" value="post"/>
         <div class="form-group">
             <a href="{{url('medico')}}">Buscar médicos</a><br>
             <label for="nomeAlt">Nome</label>
