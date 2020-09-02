@@ -16,17 +16,20 @@ Teste Prático de PHP para novos Colaboradores
 - Acessar diretório do projeto:
 
     `cd testePratico/`
+
+- Copiar arquivo de configuração    
+
+    `cp env_laradock laradock/.env`
+    
+    `cp .env.example .env`
+
 - Executar containers:
 
     `./run`
 - Instalar dependências
 
     `docker exec -it testepratico_workspace_1 composer install`    
-- Copiar arquivo de configuração    
 
-    `cp env_laradock laradock/.env`
-    
-    `cp .env.example .env`
 - Gerar chave de segurança
 
     `docker exec -it testepratico_workspace_1 php artisan key:generate`
